@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import Stats from './component/Stats'
+import Header from './component/Header'
+import Chartbox from './component/Chartbox'
+import StatsTable from './component/StatsTable'
+import ToggleButtons from './component/ToggleButtons'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const [searchLocation, setSearchLocation] = useState('')
+   const [pageNumber, setPageNumber] = useState(0)
+
+   return (
+      <div className="App">
+         <ToggleButtons toggleButton={setPageNumber} value={pageNumber}/>
+         {pageNumber === 0 && (
+            <>
+               <Header
+                  location={searchLocation}
+                  getLocation={setSearchLocation}
+               />
+               <Stats
+                  location={searchLocation === '' ? 'all' : searchLocation}
+                  getLocation={setSearchLocation}
+               />
+               <Chartbox
+                  location={searchLocation === '' ? 'all' : searchLocation}
+                  getLocation={setSearchLocation}
+               />
+            </>
+         )}
+         {pageNumber === 1 && <StatsTable />}
+      </div>
+   )
 }
 
-export default App;
+export default App
