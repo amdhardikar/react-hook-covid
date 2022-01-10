@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-hook-covid/static/css/main.21260ba0.css",
+    "main.js": "/react-hook-covid/static/js/main.ddb5c242.js",
+    "index.html": "/react-hook-covid/index.html",
+    "main.21260ba0.css.map": "/react-hook-covid/static/css/main.21260ba0.css.map",
+    "main.ddb5c242.js.map": "/react-hook-covid/static/js/main.ddb5c242.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21260ba0.css",
+    "static/js/main.ddb5c242.js"
+  ]
+}
